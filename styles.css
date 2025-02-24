@@ -1,121 +1,243 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #2c3e50;
+    --background-color: #f4f6f9;
+    --text-color: #333;
+    --accent-color: #6a5acd;
+    --white: #ffffff;
+}
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    font-weight: 300;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 header {
-    background-color: #3498db;
-    color: white;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--white);
     text-align: center;
-    padding: 20px;
+    padding: 3rem 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 200;
+    letter-spacing: 1px;
 }
 
 nav {
-    background-color: #2c3e50;
-    padding: 10px;
+    background-color: var(--white);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav .container {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 20px;
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
     display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 15px;
+    list-style: none;
+    gap: 2rem;
 }
 
 nav ul li a {
-    color: #ecf0f1;
     text-decoration: none;
-    font-weight: bold;
+    color: var(--secondary-color);
+    font-weight: 400;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #3498db;
+    color: var(--primary-color);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
 }
 
 main {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
+    padding: 2rem 0;
 }
 
-/* Index Page Specific Styles */
-#index-intro {
-    background-color: #e74c3c;
-    color: white;
-    padding: 15px;
-    border-radius: 5px;
+.card {
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
 }
 
-/* About Page Specific Styles */
-#about-name {
-    color: #2980b9;
+.card:hover {
+    transform: translateY(-5px);
 }
 
-#about-intro {
-    background-color: #27ae60;
-    color: white;
-    padding: 15px;
-    border-radius: 5px;
-}
-
-#about-hobby {
-    background-color: #f39c12;
-    color: white;
-    padding: 15px;
-    border-radius: 5px;
-}
-
-/* Contact Page Specific Styles */
 form {
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
 }
 
 form label {
-    color: #8e44ad;
-    margin-top: 10px;
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
 }
 
-form input, form textarea {
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #bdc3c7;
-    border-radius: 4px;
+form input, 
+form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    transition: all 0.3s ease;
 }
 
-#name {
-    background-color: #f1c40f;
+form input:focus, 
+form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74,144,226,0.2);
 }
 
-#email {
-    background-color: #e67e22;
-}
-
-#subject {
-    background-color: #3498db;
-}
-
-#message {
-    background-color: #2ecc71;
-}
-
-form button {
-    background-color: #2c3e50;
-    color: white;
+.submit-btn {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--white);
     border: none;
-    padding: 10px;
+    padding: 0.75rem;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-form button:hover {
-    background-color: #34495e;
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+}
+/* Resume Specific Styles */
+.resume-card {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.resume-header {
+    text-align: center;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 1rem;
+}
+
+.resume-header h1 {
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.resume-header p {
+    font-weight: 300;
+    color: var(--text-color);
+}
+
+.contact-info .info-grid,
+.skills-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.info-item,
+.skill-item {
+    background-color: rgba(74,144,226,0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 400;
+}
+
+.experience-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.job-header h3 {
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.job-details ul {
+    list-style-type: disc;
+    padding-left: 2rem;
+}
+
+section h2 {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    color: var(--secondary-color);
 }
