@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HelpHub - Connect with Charities</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="flex flex-col min-h-screen">
+      <!-- Header/Navigation -->
+      <header
+        class="flex justify-center items-center px-20 bg-white border border-neutral-200 h-[65px] max-md:px-10 max-sm:px-5"
+      >
+        <div
+          class="flex justify-between items-center w-full max-w-screen-xl h-8"
+        >
+          <h1 class="text-2xl font-bold text-neutral-800">HelpHub</h1>
+          <nav class="flex gap-9 max-md:hidden">
+            <a href="#" class="text-base bg-[clip-text]">Home</a>
+            <a href="#" class="text-base text-neutral-600">Charities</a>
+            <a href="#" class="text-base text-neutral-600">About Us</a>
+            <a href="#" class="text-base text-neutral-600">Contact</a>
+          </nav>
+          <button
+            id="mobileMenuButton"
+            class="hidden max-md:block"
+            aria-label="Search"
+          >
+            <svg
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-[24px] h-[24px]"
+            >
+              <g clip-path="url(#clip0_2_434)">
+                <path
+                  d="M29.25 14.625C29.25 17.8523 28.2023 20.8336 26.4375 23.2523L35.3391 32.1609C36.218 33.0398 36.218 34.4672 35.3391 35.3461C34.4602 36.225 33.0328 36.225 32.1539 35.3461L23.2523 26.4375C20.8336 28.2094 17.8523 29.25 14.625 29.25C6.54609 29.25 0 22.7039 0 14.625C0 6.54609 6.54609 0 14.625 0C22.7039 0 29.25 6.54609 29.25 14.625ZM14.625 24.75C15.9546 24.75 17.2712 24.4881 18.4997 23.9793C19.7281 23.4705 20.8443 22.7246 21.7845 21.7845C22.7246 20.8443 23.4705 19.7281 23.9793 18.4997C24.4881 17.2712 24.75 15.9546 24.75 14.625C24.75 13.2954 24.4881 11.9788 23.9793 10.7503C23.4705 9.52191 22.7246 8.40574 21.7845 7.46554C20.8443 6.52535 19.7281 5.77955 18.4997 5.27072C17.2712 4.76189 15.9546 4.5 14.625 4.5C13.2954 4.5 11.9788 4.76189 10.7503 5.27072C9.52191 5.77955 8.40574 6.52535 7.46554 7.46554C6.52535 8.40574 5.77955 9.52191 5.27072 10.7503C4.76189 11.9788 4.5 13.2954 4.5 14.625C4.5 15.9546 4.76189 17.2712 5.27072 18.4997C5.77955 19.7281 6.52535 20.8443 7.46554 21.7845C8.40574 22.7246 9.52191 23.4705 10.7503 23.9793C11.9788 24.4881 13.2954 24.75 14.625 24.75Z"
+                  fill="#5BA1E3"
+                ></path>
+              </g>
+              <defs>
+                <clipPath id="clip0_2_434">
+                  <path d="M0 0H36V36H0V0Z" fill="white"></path>
+                </clipPath>
+              </defs>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="relative h-[720px]">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/823a27aaee38b49c61630871249ddded32838013"
+          alt="Background"
+          class="absolute w-full h-full object-cover filter blur-[5px]"
+        />
+        <div class="absolute inset-0 bg-zinc-800 bg-opacity-70"></div>
+        <div
+          class="flex relative flex-col justify-center items-center px-5 h-full text-center"
+        >
+          <h2
+            class="mb-6 text-5xl leading-tight text-white max-md:text-4xl max-sm:text-3xl"
+          >
+            Connect with Charities. Make a Difference.
+          </h2>
+          <p
+            class="mb-12 text-xl text-white max-w-[657px] max-md:text-lg max-sm:text-base"
+          >
+            HelpHub bridges volunteers with local charities. Find causes you
+            care about and start volunteering today!
+          </p>
+          <button class="px-8 py-3.5 bg-white rounded-lg">
+            <span class="text-base bg-[clip-text]">Explore Charities Now</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="px-20 py-12 bg-white max-md:px-10 max-sm:px-5">
+        <div class="max-w-screen-xl mx-auto">
+          <h2 class="mb-6 text-3xl text-neutral-800">Latest Volunteering News</h2>
+          
+          <!-- Search Input -->
+          <div class="mb-8">
+            <input 
+              type="text" 
+              id="searchQuery"
+              placeholder="Search volunteering articles..."
+              class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:border-blue-500"
+            >
+          </div>
+      
+          <!-- Results Container -->
+          <div id="newsResults" class="grid gap-6"></div>
+        </div>
+      </section>
+    
+
+      <!-- Features Section -->
+      <section
+        class="px-20 py-24 bg-neutral-50 max-md:px-10 max-sm:px-5 max-sm:py-12"
+      >
+        <div class="mx-auto max-w-screen-xl">
+          <div
+            class="grid grid-cols-3 gap-8 max-md:grid-cols-2 max-sm:grid-cols-1"
+          >
+            <!-- Feature Card 1 -->
+            <article class="p-8 bg-white rounded-lg shadow-sm">
+              <div class="mb-4">
+                <svg
+                  width="36"
+                  height="36"
+                  viewBox="0 0 36 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-[36px] h-[36px]"
+                >
+                  <g clip-path="url(#clip0_2_434)">
+                    <path
+                      d="M29.25 14.625C29.25 17.8523 28.2023 20.8336 26.4375 23.2523L35.3391 32.1609C36.218 33.0398 36.218 34.4672 35.3391 35.3461C34.4602 36.225 33.0328 36.225 32.1539 35.3461L23.2523 26.4375C20.8336 28.2094 17.8523 29.25 14.625 29.25C6.54609 29.25 0 22.7039 0 14.625C0 6.54609 6.54609 0 14.625 0C22.7039 0 29.25 6.54609 29.25 14.625ZM14.625 24.75C15.9546 24.75 17.2712 24.4881 18.4997 23.9793C19.7281 23.4705 20.8443 22.7246 21.7845 21.7845C22.7246 20.8443 23.4705 19.7281 23.9793 18.4997C24.4881 17.2712 24.75 15.9546 24.75 14.625C24.75 13.2954 24.4881 11.9788 23.9793 10.7503C23.4705 9.52191 22.7246 8.40574 21.7845 7.46554C20.8443 6.52535 19.7281 5.77955 18.4997 5.27072C17.2712 4.76189 15.9546 4.5 14.625 4.5C13.2954 4.5 11.9788 4.76189 10.7503 5.27072C9.52191 5.77955 8.40574 6.52535 7.46554 7.46554C6.52535 8.40574 5.77955 9.52191 5.27072 10.7503C4.76189 11.9788 4.5 13.2954 4.5 14.625C4.5 15.9546 4.76189 17.2712 5.27072 18.4997C5.77955 19.7281 6.52535 20.8443 7.46554 21.7845C8.40574 22.7246 9.52191 23.4705 10.7503 23.9793C11.9788 24.4881 13.2954 24.75 14.625 24.75Z"
+                      fill="#5BA1E3"
+                    ></path>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_2_434">
+                      <path d="M0 0H36V36H0V0Z" fill="white"></path>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <h3 class="mb-2 text-xl text-neutral-800">
+                Search Local Charities
+              </h3>
+              <p class="text-base text-neutral-600">
+                Find charities and causes in your local area that match your
+                interests.
+              </p>
+            </article>
+
+            <!-- Feature Card 2 -->
+            <article class="p-8 bg-white rounded-lg shadow-sm">
+              <div class="mb-4">
+                <svg
+                  width="42"
+                  height="36"
+                  viewBox="0 0 42 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-[41px] h-[36px]"
+                >
+                  <g clip-path="url(#clip0_2_443)">
+                    <path
+                      d="M18.2063 33.1523C18.9656 33.4195 19.7812 32.8641 19.7812 32.0625V5.52656C19.7812 5.23125 19.6688 4.93594 19.4297 4.75312C18.0516 3.65625 14.8875 2.25 10.7812 2.25C7.23047 2.25 3.91172 3.18516 1.92891 3.94453C1.13438 4.25391 0.65625 5.04141 0.65625 5.89219V31.9289C0.65625 32.7656 1.55625 33.3492 2.35078 33.0891C4.56562 32.3508 8.07422 31.5 10.7812 31.5C13.1648 31.5 16.3359 32.4844 18.2063 33.1523ZM23.6062 33.1523C25.4766 32.4844 28.6477 31.5 31.0312 31.5C33.7383 31.5 37.2469 32.3508 39.4617 33.0891C40.2563 33.3563 41.1562 32.7656 41.1562 31.9289V5.89219C41.1562 5.04141 40.6781 4.25391 39.8836 3.95156C37.9008 3.18516 34.582 2.25 31.0312 2.25C26.925 2.25 23.7609 3.65625 22.3828 4.75312C22.1508 4.93594 22.0312 5.23125 22.0312 5.52656V32.0625C22.0312 32.8641 22.8539 33.4195 23.6062 33.1523Z"
+                      fill="#5BA1E3"
+                    ></path>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_2_443">
+                      <path
+                        d="M0.65625 0H41.1562V36H0.65625V0Z"
+                        fill="white"
+                      ></path>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <h3 class="mb-2 text-xl text-neutral-800">Learn About Causes</h3>
+              <p class="text-base text-neutral-600">
+                Discover various causes and understand how you can make an
+                impact.
+              </p>
+            </article>
+
+            <!-- Feature Card 3 -->
+            <article class="p-8 bg-white rounded-lg shadow-sm">
+              <div class="mb-4">
+                <svg
+                  width="37"
+                  height="36"
+                  viewBox="0 0 37 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-[36px] h-[36px]"
+                >
+                  <g clip-path="url(#clip0_2_452)">
+                    <path
+                      d="M18.3281 0C23.102 0 27.6804 1.89642 31.056 5.27208C34.4317 8.64773 36.3281 13.2261 36.3281 18C36.3281 22.7739 34.4317 27.3523 31.056 30.7279C27.6804 34.1036 23.102 36 18.3281 36C13.5542 36 8.97586 34.1036 5.6002 30.7279C2.22455 27.3523 0.328125 22.7739 0.328125 18C0.328125 13.2261 2.22455 8.64773 5.6002 5.27208C8.97586 1.89642 13.5542 0 18.3281 0ZM16.6406 8.4375V18C16.6406 18.5625 16.9219 19.0898 17.393 19.4062L24.143 23.9062C24.9164 24.4266 25.9641 24.2156 26.4844 23.4352C27.0047 22.6547 26.7937 21.6141 26.0133 21.0938L20.0156 17.1V8.4375C20.0156 7.50234 19.2633 6.75 18.3281 6.75C17.393 6.75 16.6406 7.50234 16.6406 8.4375Z"
+                      fill="#5BA1E3"
+                    ></path>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_2_452">
+                      <path
+                        d="M0.328125 0H36.3281V36H0.328125V0Z"
+                        fill="white"
+                      ></path>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <h3 class="mb-2 text-xl text-neutral-800">
+                Volunteer in Minutes
+              </h3>
+              <p class="text-base text-neutral-600">
+                Quick and easy process to start volunteering with your chosen
+                charity.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer
+        class="px-20 py-12 bg-[radial-gradient(50%_50%_at_50%_50%,#5BA1E3_0%,#58AEFF_100%)] max-md:px-10 max-sm:px-5"
+      >
+        <div class="mx-auto max-w-screen-xl">
+          <div
+            class="grid grid-cols-3 gap-8 max-md:grid-cols-2 max-sm:grid-cols-1"
+          >
+            <!-- Quick Links -->
+            <div class="flex flex-col gap-5">
+              <h3 class="text-lg text-white">Quick Links</h3>
+              <nav class="flex flex-col gap-2">
+                <a href="#" class="text-base text-neutral-800"
+                  >Charities List</a
+                >
+                <a href="#" class="text-base text-neutral-800">FAQ</a>
+                <a href="#" class="text-base text-neutral-800"
+                  >Partner with Us</a
+                >
+              </nav>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex flex-col gap-5">
+              <h3 class="text-lg text-white">Follow Us</h3>
+              <div class="flex gap-4">
+                <a href="#" aria-label="Facebook">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-[24px] h-[24px]"
+                  >
+                    <g clip-path="url(#clip0_2_473)">
+                      <path
+                        d="M23.625 12C23.625 5.57812 18.4219 0.375 12 0.375C5.57812 0.375 0.375 5.57812 0.375 12C0.375 17.8022 4.62609 22.6116 10.1836 23.4844V15.3605H7.23047V12H10.1836V9.43875C10.1836 6.52547 11.918 4.91625 14.5744 4.91625C15.8466 4.91625 17.1769 5.14313 17.1769 5.14313V8.0025H15.7106C14.2669 8.0025 13.8164 8.89875 13.8164 9.81797V12H17.0405L16.5248 15.3605H13.8164V23.4844C19.3739 22.6116 23.625 17.8022 23.625 12Z"
+                        fill="#272727"
+                      ></path>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2_473">
+                        <path d="M0 0H24V24H0V0Z" fill="white"></path>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </a>
+                <a href="#" aria-label="Twitter">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-[24px] h-[24px]"
+                  >
+                    <path d="M0 0H24V24H0V0Z" stroke="#E5E7EB"></path>
+                    <path
+                      d="M21.533 7.11175C21.5482 7.32494 21.5482 7.53817 21.5482 7.75136C21.5482 14.2539 16.599 21.7463 7.5533 21.7463C4.76648 21.7463 2.17767 20.9391 0 19.5382C0.395953 19.5838 0.776625 19.5991 1.18781 19.5991C3.48727 19.5991 5.60405 18.8224 7.29441 17.4976C5.13197 17.4519 3.31978 16.0356 2.69541 14.0864C3 14.132 3.30455 14.1625 3.62437 14.1625C4.06598 14.1625 4.50764 14.1016 4.91878 13.995C2.66498 13.5381 0.974578 11.5585 0.974578 9.16759V9.1067C1.62937 9.47219 2.39086 9.70061 3.19791 9.73103C1.87303 8.84777 1.00505 7.34017 1.00505 5.63458C1.00505 4.72089 1.24866 3.88333 1.67508 3.15236C4.09641 6.13713 7.73602 8.08633 11.8172 8.29956C11.7411 7.93408 11.6954 7.55341 11.6954 7.17269C11.6954 4.462 13.8883 2.25391 16.6141 2.25391C18.0304 2.25391 19.3095 2.84781 20.208 3.8072C21.3197 3.59402 22.3857 3.18283 23.3299 2.61939C22.9643 3.76155 22.1877 4.72094 21.1674 5.33003C22.1573 5.22348 23.1167 4.94931 23.9999 4.56864C23.33 5.54322 22.4924 6.4112 21.533 7.11175Z"
+                      fill="#272727"
+                    ></path>
+                  </svg>
+                </a>
+                <a href="#" aria-label="Instagram">
+                  <svg
+                    width="21"
+                    height="24"
+                    viewBox="0 0 21 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-[21px] h-[24px]"
+                  >
+                    <g clip-path="url(#clip0_2_479)">
+                      <path
+                        d="M10.5047 6.60928C7.52344 6.60928 5.11876 9.01396 5.11876 11.9952C5.11876 14.9765 7.52344 17.3812 10.5047 17.3812C13.4859 17.3812 15.8906 14.9765 15.8906 11.9952C15.8906 9.01396 13.4859 6.60928 10.5047 6.60928ZM10.5047 15.4968C8.57813 15.4968 7.00313 13.9265 7.00313 11.9952C7.00313 10.064 8.57344 8.49365 10.5047 8.49365C12.4359 8.49365 14.0063 10.064 14.0063 11.9952C14.0063 13.9265 12.4313 15.4968 10.5047 15.4968ZM17.3672 6.38896C17.3672 7.0874 16.8047 7.64522 16.1109 7.64522C15.4125 7.64522 14.8547 7.08271 14.8547 6.38896C14.8547 5.69521 15.4172 5.13271 16.1109 5.13271C16.8047 5.13271 17.3672 5.69521 17.3672 6.38896ZM20.9344 7.66397C20.8547 5.98115 20.4703 4.49053 19.2375 3.2624C18.0094 2.03428 16.5188 1.6499 14.8359 1.56553C13.1016 1.46709 7.90313 1.46709 6.16876 1.56553C4.49063 1.64521 3.00001 2.02959 1.76719 3.25771C0.534381 4.48584 0.154694 5.97646 0.0703186 7.65928C-0.0281189 9.39365 -0.0281189 14.5921 0.0703186 16.3265C0.150006 18.0093 0.534381 19.4999 1.76719 20.728C3.00001 21.9562 4.48594 22.3405 6.16876 22.4249C7.90313 22.5233 13.1016 22.5233 14.8359 22.4249C16.5188 22.3452 18.0094 21.9608 19.2375 20.728C20.4656 19.4999 20.85 18.0093 20.9344 16.3265C21.0328 14.5921 21.0328 9.39834 20.9344 7.66397ZM18.6938 18.1874C18.3281 19.1062 17.6203 19.814 16.6969 20.1843C15.3141 20.7327 12.0328 20.6062 10.5047 20.6062C8.97657 20.6062 5.69063 20.728 4.31251 20.1843C3.39376 19.8187 2.68594 19.1108 2.31563 18.1874C1.76719 16.8046 1.89376 13.5233 1.89376 11.9952C1.89376 10.4671 1.77188 7.18115 2.31563 5.80303C2.68126 4.88428 3.38907 4.17646 4.31251 3.80615C5.69532 3.25771 8.97657 3.38428 10.5047 3.38428C12.0328 3.38428 15.3188 3.2624 16.6969 3.80615C17.6156 4.17178 18.3234 4.87959 18.6938 5.80303C19.2422 7.18584 19.1156 10.4671 19.1156 11.9952C19.1156 13.5233 19.2422 16.8093 18.6938 18.1874Z"
+                        fill="#272727"
+                      ></path>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2_479">
+                        <path d="M0 0H21V24H0V0Z" fill="white"></path>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="flex flex-col gap-5">
+              <h3 class="text-lg text-white">Contact Info</h3>
+              <p class="text-base text-neutral-800">
+                Email: contact@helphub.com
+              </p>
+              <p class="text-base text-neutral-800">Phone: (555) 123-4567</p>
+              <p class="text-base text-neutral-800">
+                © 2025 HelpHub. All rights reserved.
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+  </body>
+  <script>
+    const API_KEY = 'be5bf019-e6dd-425a-972c-8a61649bcde7'; 
+    
+    // 2. Fetch Function
+    async function searchNews() {
+      const query = document.getElementById('searchQuery').value || 'volunteering';
+      const url = `https://content.guardianapis.com/search?q=${query}&api-key=${API_KEY}`;
+      
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        const container = document.getElementById('newsResults');
+        container.innerHTML = data.response.results.map(article => `
+          <div class="p-6 bg-neutral-50 rounded-lg">
+            <h3 class="mb-2 text-xl text-neutral-800">${article.webTitle}</h3>
+            <p class="mb-4 text-neutral-600">${new Date(article.webPublicationDate).toLocaleDateString()}</p>
+            <a href="${article.webUrl}" target="_blank" class="text-blue-500 hover:underline">Read more</a>
+          </div>
+        `).join('');
+      } catch (error) {
+        console.error('Error fetching news:', error);
+        document.getElementById('newsResults').innerHTML = '<p class="text-red-500">Failed to load news articles</p>';
+      }
+    }
+    
+    document.getElementById('searchQuery').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') searchNews();
+    });
+    </script>
+</html>
