@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Earth Initiative - HelpHub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.30.0/tabler-icons.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="font-['Inter',sans-serif]">
+  <div class="flex flex-col min-h-screen">
+    <!-- Header Component -->
+    <header
+      class="flex justify-center items-center px-20 bg-white border border-neutral-200 h-[65px] max-md:px-10 max-sm:px-5">
+      <div class="flex justify-between items-center w-full max-w-screen-xl h-8">
+        <h1 class="text-2xl font-bold text-neutral-800">HelpHub</h1>
+        <nav class="flex gap-9 max-md:hidden">
+          <a href="#" class="text-base bg-[clip-text]">Home</a>
+          <a href="#" class="text-base text-neutral-600">Charities</a>
+          <a href="#" class="text-base text-neutral-600">About Us</a>
+          <a href="#" class="text-base text-neutral-600">Contact</a>
+        </nav>
+        <button class="hidden max-md:block" aria-label="Menu">
+          <i class="ti ti-menu-2 text-2xl text-neutral-800"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero Section Component -->
+    <section class="overflow-hidden relative bg-neutral-100 h-[400px]">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1e392266203d6d54b63c2e9df8fe095c1db3bc2f"
+        alt="Green Earth Initiative background"
+        class="absolute w-full h-[720px] object-cover filter blur-[5px] -top-[190px]">
+      <div class="absolute inset-0 bg-neutral-700 bg-opacity-40"></div>
+      <div class="flex relative justify-center items-center px-20 h-full max-md:px-10 max-sm:px-5">
+        <div class="flex gap-8 items-center max-md:flex-col max-md:text-center">
+          <div class="flex shrink-0 justify-center items-center w-32 h-32 rounded-full bg-neutral-200">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"
+              class="w-[36px] h-[36px]">
+              <path d="M0 0H36V36H0V0Z" stroke="#E5E7EB"></path>
+              <path
+                d="M19.125 6.75004C13.5984 6.75004 8.92266 10.3711 7.33359 15.3633C9.69609 14.168 12.3609 13.5 15.1875 13.5H21.375C21.9937 13.5 22.5 14.0063 22.5 14.625C22.5 15.2438 21.9937 15.75 21.375 15.75H20.25H15.1875C14.0203 15.75 12.8883 15.8836 11.7984 16.1297C9.97734 16.5446 8.28281 17.2829 6.77813 18.2883C2.69297 21.0094 0 25.6571 0 30.9375V32.0625C0 32.9977 0.752344 33.75 1.6875 33.75C2.62266 33.75 3.375 32.9977 3.375 32.0625V30.9375C3.375 27.5133 4.83047 24.4336 7.15781 22.275C8.55 27.5836 13.3805 31.5 19.125 31.5H19.1953C28.4836 31.4508 36 22.2961 36 11.011C36 8.01567 35.4727 5.16801 34.5164 2.60161C34.3336 2.11645 33.6234 2.13754 33.3773 2.59458C32.0555 5.06958 29.4398 6.75004 26.4375 6.75004H19.125Z"
+                fill="#737373"></path>
+            </svg>
+          </div>
+          <div class="flex flex-col gap-4">
+            <h2 class="text-4xl text-black max-md:text-3xl max-sm:text-3xl">Green Earth Initiative</h2>
+            <p class="text-xl text-neutral-600 max-md:text-lg max-sm:text-base">Protecting urban green spaces for future
+              generations</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Info Cards Component -->
+    <section class="flex justify-center px-20 py-12 bg-white max-md:px-10 max-sm:px-5">
+      <div class="grid grid-cols-4 gap-8 w-full max-w-screen-xl max-md:grid-cols-2 max-sm:grid-cols-1">
+        <article class="p-6 rounded-lg bg-neutral-50">
+          <h3 class="mb-2 text-base text-black">Location</h3>
+          <p class="text-base text-black">Based in San Francisco</p>
+        </article>
+        <article class="p-6 rounded-lg bg-neutral-50">
+          <h3 class="mb-2 text-base text-black">Cause Areas</h3>
+          <p class="text-base text-black">
+            Environment, Education,<br>
+            Sustainability
+          </p>
+        </article>
+        <article class="p-6 rounded-lg bg-neutral-50">
+          <h3 class="mb-2 text-base text-black">Volunteer Opportunities</h3>
+          <p class="text-base text-black">
+            Tree Planting, Workshops,<br>
+            Advocacy
+          </p>
+        </article>
+        <article class="p-6 rounded-lg bg-neutral-50">
+          <h3 class="mb-2 text-base text-black">Impact</h3>
+          <p class="text-base text-black">
+            10,000+ trees planted since<br>
+            2020
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Work Showcase Component -->
+    <section class="flex justify-center px-20 py-12 bg-neutral-50 max-md:px-10 max-sm:px-5">
+      <div class="flex flex-col w-full max-w-screen-xl">
+        <h2 class="mb-9 text-2xl text-black">Our Work</h2>
+        <div class="grid grid-cols-3 gap-6 max-md:grid-cols-2 max-sm:grid-cols-1">
+          <article class="h-64 text-base text-white rounded-lg bg-neutral-300 flex items-end p-4">
+            Tree Planting Event
+          </article>
+          <article class="h-64 text-base text-white rounded-lg bg-neutral-300 flex items-end p-4">
+            Community Workshop
+          </article>
+          <article class="h-64 text-base text-white rounded-lg bg-neutral-300 flex items-end p-4">
+            Urban Garden Project
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Volunteer Form Component -->
+    <section class="flex justify-center px-20 py-12 bg-white max-md:px-10 max-sm:px-5">
+      <div class="flex flex-col items-center w-full max-w-md">
+        <h2 class="mb-8 text-3xl text-center text-black">Join Our Mission</h2>
+        <button id="volunteerButton"
+          class="mb-8 h-14 text-base text-white rounded-lg bg-[radial-gradient(50%_50%_at_50%_50%,#5BA1E3_0%,#58AEFF_100%)] w-[175px]">
+          Volunteer Now
+        </button>
+        <div class="p-8 w-full rounded-lg bg-neutral-50">
+          <form id="volunteerForm" class="hidden flex flex-col gap-4">
+            <input type="text" id="fullName" placeholder="Full Name" class="px-4 rounded-lg border border h-[42px]"
+              required>
+            <input type="email" id="email" placeholder="Email Address" class="px-4 rounded-lg border border h-[42px]"
+              required>
+            <input type="tel" id="phone" placeholder="Phone Number" class="px-4 rounded-lg border border h-[42px]"
+              required>
+            <div class="relative">
+              <input type="text" id="date" placeholder="mm/dd/yyyy" class="px-4 w-full h-11 rounded-lg border border"
+                required>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="absolute right-[16px] top-[10px] w-[24px] h-[24px]">
+                <path
+                  d="M6.75 3V5.25M17.25 3V5.25M3 18.75V7.5C3 6.90326 3.23705 6.33097 3.65901 5.90901C4.08097 5.48705 4.65326 5.25 5.25 5.25H18.75C19.3467 5.25 19.919 5.48705 20.341 5.90901C20.7629 6.33097 21 6.90326 21 7.5V18.75M3 18.75C3 19.3467 3.23705 19.919 3.65901 20.341C4.08097 20.7629 4.65326 21 5.25 21H18.75C19.3467 21 19.919 20.7629 20.341 20.341C20.7629 19.919 21 19.3467 21 18.75M3 18.75V11.25C3 10.6533 3.23705 10.081 3.65901 9.65901C4.08097 9.23705 4.65326 9 5.25 9H18.75C19.3467 9 19.919 9.23705 20.341 9.65901C20.7629 10.081 21 10.6533 21 11.25V18.75"
+                  stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <button type="submit"
+              class="h-10 text-base text-white rounded-lg bg-[radial-gradient(50%_50%_at_50%_50%,#5BA1E3_0%,#58AEFF_100%)]">
+              Join Us!
+            </button>
+          </form>
+        </div>
+        <a href="#" class="flex gap-2 items-center mt-8 text-base text-neutral-600">
+          <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+            class="w-[14px] h-[16px]">
+            <g clip-path="url(#clip0_2_910)">
+              <path
+                d="M0.465576 7.29365C0.0749512 7.68428 0.0749512 8.31865 0.465576 8.70928L5.46558 13.7093C5.8562 14.0999 6.49058 14.0999 6.8812 13.7093C7.27183 13.3187 7.27183 12.6843 6.8812 12.2937L3.58433 8.9999H13.1718C13.725 8.9999 14.1718 8.55303 14.1718 7.9999C14.1718 7.44678 13.725 6.9999 13.1718 6.9999H3.58745L6.87808 3.70615C7.2687 3.31553 7.2687 2.68115 6.87808 2.29053C6.48745 1.8999 5.85308 1.8999 5.46245 2.29053L0.462451 7.29053L0.465576 7.29365Z"
+                fill="#525252"></path>
+            </g>
+            <defs>
+              <clipPath id="clip0_2_910">
+                <path d="M0.171875 0H14.1719V16H0.171875V0Z" fill="white"></path>
+              </clipPath>
+            </defs>
+          </svg>
+          <span>Return to Charities List</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer Component -->
+    <footer
+      class="px-20 py-12 bg-[radial-gradient(50%_50%_at_50%_50%,#5BA1E3_0%,#58AEFF_100%)] max-md:px-10 max-sm:px-5">
+      <div class="flex justify-center">
+        <div class="grid grid-cols-3 gap-8 w-full max-w-screen-xl max-md:grid-cols-2 max-sm:grid-cols-1">
+          <div class="flex flex-col gap-5">
+            <h3 class="text-lg text-white">Quick Links</h3>
+            <nav class="flex flex-col gap-2">
+              <a href="#" class="text-base text-neutral-800">Charities List</a>
+              <a href="#" class="text-base text-neutral-800">FAQ</a>
+              <a href="#" class="text-base text-neutral-800">Partner with Us</a>
+            </nav>
+          </div>
+          <div class="flex flex-col gap-5">
+            <h3 class="text-lg text-white">Follow Us</h3>
+            <div class="flex gap-4">
+              <a href="#" aria-label="Facebook">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  class="w-[24px] h-[24px]">
+                  <g clip-path="url(#clip0_2_1060)">
+                    <path
+                      d="M23.625 12C23.625 5.57812 18.4219 0.375 12 0.375C5.57812 0.375 0.375 5.57812 0.375 12C0.375 17.8022 4.62609 22.6116 10.1836 23.4844V15.3605H7.23047V12H10.1836V9.43875C10.1836 6.52547 11.918 4.91625 14.5744 4.91625C15.8466 4.91625 17.1769 5.14313 17.1769 5.14313V8.0025H15.7106C14.2669 8.0025 13.8164 8.89875 13.8164 9.81797V12H17.0405L16.5248 15.3605H13.8164V23.4844C19.3739 22.6116 23.625 17.8022 23.625 12Z"
+                      fill="#272727"></path>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_2_1060">
+                      <path d="M0 0H24V24H0V0Z" fill="white"></path>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  class="w-[24px] h-[24px]">
+                  <path d="M0 0H24V24H0V0Z" stroke="#E5E7EB"></path>
+                  <path
+                    d="M21.533 7.11175C21.5482 7.32494 21.5482 7.53817 21.5482 7.75136C21.5482 14.2539 16.599 21.7463 7.5533 21.7463C4.76648 21.7463 2.17767 20.9391 0 19.5382C0.395953 19.5838 0.776625 19.5991 1.18781 19.5991C3.48727 19.5991 5.60405 18.8224 7.29441 17.4976C5.13197 17.4519 3.31978 16.0356 2.69541 14.0864C3 14.132 3.30455 14.1625 3.62437 14.1625C4.06598 14.1625 4.50764 14.1016 4.91878 13.995C2.66498 13.5381 0.974578 11.5585 0.974578 9.16759V9.1067C1.62937 9.47219 2.39086 9.70061 3.19791 9.73103C1.87303 8.84777 1.00505 7.34017 1.00505 5.63458C1.00505 4.72089 1.24866 3.88333 1.67508 3.15236C4.09641 6.13713 7.73602 8.08633 11.8172 8.29956C11.7411 7.93408 11.6954 7.55341 11.6954 7.17269C11.6954 4.462 13.8883 2.25391 16.6141 2.25391C18.0304 2.25391 19.3095 2.84781 20.208 3.8072C21.3197 3.59402 22.3857 3.18283 23.3299 2.61939C22.9643 3.76155 22.1877 4.72094 21.1674 5.33003C22.1573 5.22348 23.1167 4.94931 23.9999 4.56864C23.33 5.54322 22.4924 6.4112 21.533 7.11175Z"
+                    fill="#272727"></path>
+                </svg>
+              </a>
+              <a href="#" aria-label="Instagram">
+                <svg width="21" height="24" viewBox="0 0 21 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  class="w-[21px] h-[24px]">
+                  <g clip-path="url(#clip0_2_1068)">
+                    <path
+                      d="M10.5048 6.60928C7.52354 6.60928 5.11885 9.01396 5.11885 11.9952C5.11885 14.9765 7.52354 17.3812 10.5048 17.3812C13.486 17.3812 15.8907 14.9765 15.8907 11.9952C15.8907 9.01396 13.486 6.60928 10.5048 6.60928ZM10.5048 15.4968C8.57822 15.4968 7.00322 13.9265 7.00322 11.9952C7.00322 10.064 8.57353 8.49365 10.5048 8.49365C12.436 8.49365 14.0063 10.064 14.0063 11.9952C14.0063 13.9265 12.4313 15.4968 10.5048 15.4968ZM17.3673 6.38896C17.3673 7.0874 16.8048 7.64522 16.111 7.64522C15.4126 7.64522 14.8548 7.08271 14.8548 6.38896C14.8548 5.69521 15.4173 5.13271 16.111 5.13271C16.8048 5.13271 17.3673 5.69521 17.3673 6.38896ZM20.9345 7.66397C20.8548 5.98115 20.4704 4.49053 19.2376 3.2624C18.0095 2.03428 16.5188 1.6499 14.836 1.56553C13.1017 1.46709 7.90322 1.46709 6.16885 1.56553C4.49072 1.64521 3.0001 2.02959 1.76729 3.25771C0.534473 4.48584 0.154785 5.97646 0.0704102 7.65928C-0.0280273 9.39365 -0.0280273 14.5921 0.0704102 16.3265C0.150098 18.0093 0.534473 19.4999 1.76729 20.728C3.0001 21.9562 4.48604 22.3405 6.16885 22.4249C7.90322 22.5233 13.1017 22.5233 14.836 22.4249C16.5188 22.3452 18.0095 21.9608 19.2376 20.728C20.4657 19.4999 20.8501 18.0093 20.9345 16.3265C21.0329 14.5921 21.0329 9.39834 20.9345 7.66397ZM18.6938 18.1874C18.3282 19.1062 17.6204 19.814 16.697 20.1843C15.3142 20.7327 12.0329 20.6062 10.5048 20.6062C8.97666 20.6062 5.69072 20.728 4.3126 20.1843C3.39385 19.8187 2.68604 19.1108 2.31572 18.1874C1.76729 16.8046 1.89385 13.5233 1.89385 11.9952C1.89385 10.4671 1.77197 7.18115 2.31572 5.80303C2.68135 4.88428 3.38916 4.17646 4.3126 3.80615C5.69541 3.25771 8.97666 3.38428 10.5048 3.38428C12.0329 3.38428 15.3188 3.2624 16.697 3.80615C17.6157 4.17178 18.3235 4.87959 18.6938 5.80303C19.2423 7.18584 19.1157 10.4671 19.1157 11.9952C19.1157 13.5233 19.2423 16.8093 18.6938 18.1874Z"
+                      fill="#272727"></path>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_2_1068">
+                      <path d="M0 0H21V24H0V0Z" fill="white"></path>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="flex flex-col gap-5">
+            <h3 class="text-lg text-white">Contact Info</h3>
+            <address class="not-italic">
+              <p class="text-base text-neutral-800">Email: contact@helphub.com</p>
+              <p class="text-base text-neutral-800">Phone: (555) 123-4567</p>
+            </address>
+            <p class="text-base text-neutral-800">© 2025 HelpHub. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
